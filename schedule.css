@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans&family=Source+Sans+3&display=swap");
+
+/* 
+font-family: 'Abel', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+font-family: 'Source Sans 3', sans-serif; 
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: suisse, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  background-image: linear-gradient(
+    to bottom,
+    #3b1eba,
+    #391da9,
+    #361b99,
+    #331a89,
+    #301879,
+    #2b176c,
+    #261660,
+    #211553,
+    #1b1347,
+    #16113b,
+    #120d2f,
+    #0f0723
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* resetting */
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+.container {
+  width: 80%;
+  max-width: 1280px;
+  margin-inline: auto;
+  /* border: 1px solid black; */
+}
+#main {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.main-heading {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+.btns {
+  flex: 1;
+  display: flex;
+}
+.btns button {
+  width: calc(100% / 3);
+  background-color: #271a59;
+  color: white;
+  border: none;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.btns button:nth-child(1) {
+  border-top-left-radius: 1rem;
+}
+.btns button span {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffcf26;
+}
+.btns button.clicked {
+  background-color: #322172;
+}
+#category-filter {
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style the dropdown options */
+#category-filter option {
+  background-color: #fff;
+  color: #333;
+}
+
+/* Style the selected option */
+#category-filter option:checked {
+  background-color: #66afe9;
+  color: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+.schedule {
+  width: 100%;
+  display: flex;
+  padding-block: 2rem;
+  background-color: #322172;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  position: relative;
+}
+
+.time-column {
+  flex: 0 0 100px; /* Width of time column */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the content vertically */
+}
+
+.time-slot {
+  height: 60px; /* Height of each time slot */
+  padding: 0 5px;
+}
+
+/* .time-slot::after {
+  content: "";
+  position: absolute;
+  height: 3px;
+  background-color: #392682;
+  width: 100%;
+  left: 100px;
+  top: 2rem;
+  padding-bottom: 30px;
+} */
+
+.events {
+  flex: 1; /* Remaining space for events */
+  position: relative;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent line breaks */
+}
+
+.event {
+  position: absolute;
+  width: 250px;
+  background-color: #403180;
+  padding: 1rem;
+  font-size: 14px;
+  line-height: 1.2;
+  text-wrap: wrap;
+  border-radius: 1rem;
+}
+
+.category {
+  font-size: 12px;
+  text-transform: capitalize;
+  background-color: #655a99;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+.event-name {
+  font-size: 1rem;
+  font-weight: 600;
+  padding-top: 12px;
+  padding-bottom: 5px;
+}
+.event-timing {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #f6a665;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+  body {
+    padding-inline: 1rem;
+  }
+  .main-heading {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+  }
+  #main {
+    padding-top: 3rem;
+  }
+  .btns button span {
+    font-size: 1.1rem;
+  }
+  .btns button {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  body {
+    padding-inline: 12px;
+  }
+  .header {
+    flex-direction: column-reverse;
+  }
+  .btns {
+    align-self: flex-start;
+    width: 100%;
+  }
+  #main {
+    padding-top: 2rem;
+    padding-bottom: 2.5rem;
+  }
+  .time-slot {
+    font-size: 13px;
+  }
+  .time-column {
+    flex: 0 0 70px;
+  }
+  .event {
+    width: 180px;
+  }
+}
